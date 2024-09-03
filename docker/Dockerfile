@@ -32,7 +32,7 @@ COPY --from=builder_backend /home/dist/ /app/
 WORKDIR "/app"
 RUN apt-get update > /dev/null && \
     apt-get install -y --no-install-recommends apt-utils && \
-    apt-get install -y curl emacs-nox ffmpeg zip poppler-utils > /dev/null && \
+    apt-get install -y ca-certificates curl emacs-nox ffmpeg zip poppler-utils > /dev/null && \
     # org-mode: html export
     curl https://raw.githubusercontent.com/mickael-kerjean/filestash/master/server/.assets/emacs/htmlize.el > /usr/share/emacs/site-lisp/htmlize.el && \
     # org-mode: markdown export
